@@ -149,7 +149,7 @@ export default config({
 		pages: collection({
 			label: "Pages",
 			slugField: "title",
-			path: "src/content/pages/it/*",
+			path: "src/content/pages/en/*",
 			entryLayout: "content",
 			columns: ["title", "lastUpdateDate"],
 			previewUrl: "/{slug}",
@@ -634,7 +634,7 @@ export default config({
 		posts: collection({
 			label: "Posts",
 			slugField: "title",
-			path: "src/content/posts/it/*",
+			path: "src/content/posts/en/*",
 			entryLayout: "content",
 			columns: ["title", "lastUpdateDate"],
 			previewUrl: "/post/{slug}",
@@ -659,6 +659,14 @@ export default config({
 					multiline: true,
 					validation: {
 						isRequired: true,
+					},
+				}),
+				category: fields.text({
+					label: "Category",
+					multiline: false,
+					// collection: "categories", (can be added in future)
+					validation: {
+						isRequired: false,
 					},
 				}),
 				author: fields.relationship({
@@ -717,7 +725,7 @@ export default config({
 		works: collection({
 			label: "Works",
 			slugField: "title",
-			path: "src/content/works/it/*",
+			path: "src/content/works/en/*",
 			entryLayout: "content",
 			columns: ["title", "lastUpdateDate"],
 			previewUrl: "/works/{slug}",
